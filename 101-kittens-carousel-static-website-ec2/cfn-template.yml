@@ -29,11 +29,12 @@ Resources:
       Tags: 
         - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack
-      UserData: |
+      UserData:
+        Fn::Base64: |
           #! /bin/bash
           yum update -y
           yum install httpd -y
-          FOLDER="https://raw.githubusercontent.com/Murattx/devops-aws-demo-projects/master/101-kittens-carousel-static-website-ec2/static-web/"
+          FOLDER="https://raw.githubusercontent.com/Murattx/devops-aws-demo-projects/master/master/101-kittens-carousel-static-website-ec2/static-web/"
           curl -s --create-dirs -o "/var/www/html/index.html" -L "$FOLDER"index.html
           curl -s --create-dirs -o "/var/www/html/cat0.jpg" -L "$FOLDER"cat0.jpg
           curl -s --create-dirs -o "/var/www/html/cat1.jpg" -L "$FOLDER"cat1.jpg
