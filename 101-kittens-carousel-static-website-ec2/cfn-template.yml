@@ -1,0 +1,13 @@
+---
+    AWSTemplateFormatVersion: "2010-09-09"
+    
+    Description:
+      This template creates Kittens Carousel App on EC2 instance
+      it also creates a security group allowing http(port 80) and ssh(port 22)
+      Connections from anywhere
+    
+    Resources:
+      set of resources
+    
+    Outputs:
+      set of outputs
