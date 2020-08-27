@@ -94,9 +94,3 @@ Outputs:
     Value: !Sub 
       - http://${ALBAddress}
       - ALBAddress: !GetAtt ALB.DNSName
-
-
-
-Outputs:
-
-
