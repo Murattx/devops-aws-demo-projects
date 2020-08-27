@@ -1,0 +1,18 @@
+Project building Session-05;
+
+Project - 102 : Kittens Carousel Static Website deployed on AWS 
+Application Load Balancer with Auto Scaling Group using AWS 
+CloudFormation
+
+Resources
+
+-Security Group for ALB
+-ALB
+-Target Group
+-ALB Listener (connection between ALB and TG)
+
+-Security Group for WebServers
+-Launch Template
+-Auto Scaling Group(Pass TG AND ASG)
+
+
