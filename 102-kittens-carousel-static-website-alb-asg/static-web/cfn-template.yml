@@ -41,7 +41,7 @@ Resources:
       AlpnPolicy:
         - String
       DefaultActions: #required
-        - TargetGroupArn: !Ref WebServerTG
+        - TargetGroupArn: !Ref WebServersTG
           Type: forward
       LoadBalancerArn: !Ref ALB #required
       Port: 80 #required
@@ -73,7 +73,7 @@ Resources:
               curl -s --create-dirs -o "/var/www/html/cat2.jpg" -L "$FOLDER"cat2.jpg
               systemctl start httpd
               systemctl enable httpd 
-  WebServerASG:
+  WebServersTG:
     Type: "AWS::AutoScaling::AutoScalingGroup"
     Properties:
       AvailabilityZones:
@@ -87,7 +87,7 @@ Resources:
       MaxSize: 3 #required
       MinSize: 1 #required
       TargetGroupARNs:
-        - !Ref WebServerTG
+        - !Ref WebServersTG
 Outputs:
   WebsiteURL:
     Description: Kittens Carousel Application Load Balancer URL
